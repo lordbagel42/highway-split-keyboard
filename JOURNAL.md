@@ -18,3 +18,10 @@ As of 2:33 pm, time spent is 4 hours.
 It's now 10:35 PM. I've gotten the layout to a point I'm actually really happy with. The wiring is sketchy as all hell and this is one of the most confusing things I've ever drawn.
 
 <img width="1120" alt="chrome_YfZfl9ad3o" src="https://github.com/user-attachments/assets/ee551144-b502-44b0-afa7-726a0fd5551f" />
+
+## this took quite a while
+its 11:24 PM. I've added a battery connector, power switch, and reset button. Still need to route the whole thing and do the CAD for the case.
+
+<img width="432" alt="chrome_WTnY3iO0zK" src="https://github.com/user-attachments/assets/ead5aced-cc6d-47a3-b9d9-63574fe97508" />
+
+but it looks sick!
