@@ -25,3 +25,9 @@ its 11:24 PM. I've added a battery connector, power switch, and reset button. St
 <img width="432" alt="chrome_WTnY3iO0zK" src="https://github.com/user-attachments/assets/ead5aced-cc6d-47a3-b9d9-63574fe97508" />
 
 but it looks sick!
+
+# May 25: It Continues.
+So turns out I accidentally did something wrong and direct-wired my ground pin. It's why freerouting was absolutely dying when I tried to use it lol.
+
+Fixing that, then have to work on the pcb.
+time: 6:46 AM
