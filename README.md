@@ -1,7 +1,8 @@
 # Turing Split - HIGHWAY
 
 <img width="547" alt="pcbnew_4b81rv2bmb" src="https://github.com/user-attachments/assets/bf6a16da-f87c-4474-8741-7fb87b2e1388" />
--# this will be replaced with a photo of the actual keyboard once its built
+
+~# this will be replaced with a photo of the actual keyboard once its built
 
 ## why?
 
