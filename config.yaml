@@ -1,0 +1,359 @@
+meta:
+  engine: 4.1.0
+
+units:
+  # Proxy Spacing Variables
+  kx: cx
+  ky: cy
+  # Padding Variables
+  px: kx + 2
+  py: ky + 2
+  $default_width: 17
+  $default_height: 17
+
+points:
+  zones:
+    matrix:
+      anchor.shift: [50,-100] # Fix KiCad placement
+      columns:
+        pinky:
+          key:
+            # valid
+            column_net: P21
+            spread: 1kx
+            splay: 15
+            origin: [0, -17]
+          rows:
+            bottom:
+              bind: [5, 1, 1, 5]
+            home:
+              bind: [1, 10, 1, 5]
+            top:
+              bind: [1, 8, 5, 5] 
+            number:
+              bind: [5, 10, 1, 5]
+        ring:
+          key:
+            # valid
+            column_net: P20
+            spread: 19
+            stagger: 17/2
+            splay: -3
+          rows:
+            bottom:
+              bind: [1, 1, 1, 10]
+            home:
+              bind: [5, 1, 5, 1]
+            top:
+              bind: [1, 6, 1, 1]
+            number:
+              bind: [5, 10, 10, 5]
+
+        middle:
+          key:
+            # valid
+            column_net: P19
+            shift: [0.2, 0]
+            spread: 19
+            stagger: 17/3
+            splay: -3
+            origin: [0, -17]
+          rows:
+            additional:
+              shift: [-0.5, -92]
+              height: 27
+              row_net: P0
+              bind: [1, 5, 0, 1]
+            bottom:
+              bind: [1, 10, 7, 5]
+            home:
+              bind: 5
+            top:
+              bind: [1, 1, 1, 1]
+            number:
+              bind: [1, 1, 1, 1]
+
+        index:
+          key:
+            # valid
+            column_net: P18
+            spread: 19
+            stagger: -17/3
+            splay: -3
+            origin: [0, -17]
+          rows:
+            bottom:
+              bind: [1, 5, 1, 1]
+            home:
+              bind: [5, 1, 5, 1]
+            top:
+              bind: [1, 1, 1, 6]
+            number:
+              bind: [6.5, 0, 10, 25]
+
+        inner:
+          key:
+            # valid
+            column_net: P15
+            spread: 20
+            stagger: -2
+            origin: [0, -17]
+          rows: 
+            bottom:
+              bind: [5, 20, 1, 2]
+            home:
+              bind: [17, 20, 1, 5]
+            top:
+              bind: [1, 1, 5, 5]
+            number: 
+              bind: [9, 32, 45, 50]
+      rows:
+        bottom:
+          padding: 1ky
+          # valid
+          row_net: P2
+        home:
+          padding: 1ky
+          # valid
+          row_net: P10
+        top:
+          padding: 1ky
+          # valid
+          row_net: P16
+        number:
+          padding: 1ky
+          # valid
+          row_net: P14
+
+    thumb:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [4, -4]
+
+      columns:
+        space:
+          key:
+          rows:
+            top:
+              # valid
+              row_net: P0
+              # valid
+              column_net: P18
+              bind: [10, 15, 1, 66]
+              shift: [-18, -14]
+              rotate: 0
+              width: 27
+          rows.bottom.skip: true
+
+        first:
+          key:
+            # valid
+            column_net: P1
+            splay: -30
+          rows:
+            top:
+              padding: -20
+              bind: [1, 1, 5, 70]
+            bottom:
+              shift: [-1, 0]
+              bind: [1, 1, 1, 1]
+
+        second:
+          key:
+            # valid
+            column_net: P3
+            origin: [-3, -12]
+            splay: -10
+            spread: 20
+          rows:
+            top:
+              padding: -20
+              shift: [0, -1]
+              bind: [5, 1, 10, 50]
+            bottom:
+              shift: [0, 0]
+              bind: [1, 1, 5, 15]
+
+        # third:
+        #   key:
+        #     column_net: P10
+        #     spread: 20
+        #     splay: -10
+        #     origin: [-9, -12]
+        #   rows:
+        #     top:
+        #       padding: -20
+        #       shift: [1, -1]
+        #       bind: [1, 1, 10, 50]
+        #     bottom:
+        #       shift: [0, 0]
+        #       bind: [1, 1, 1, 1]
+
+      rows:
+        top:
+          padding: 17
+          row_net: P2
+        bottom:
+          row_net: P0
+
+      key:
+        footprints:
+
+    # rotary:
+    #   anchor: thumb_first_top
+    #   key:
+    #     shift: [-12, 18]
+    #     rotate: 30
+    #     bind: [38, 2, 1, 2]
+    #     # skip: true
+
+  # mirror:
+  #   ref: thumb_third_top
+  #   distance: 50
+
+outlines:
+  _raw:
+    - what: rectangle
+      where: true
+      bound: true
+      asym: left
+      size: [18,17]
+      corner: 0
+  _first:
+    - what: outline
+      name: _raw
+      fillet: 3
+  _second:
+    - what: outline
+      name: _first
+      fillet: 2
+  _third:
+    - what: outline
+      name: _second
+      fillet: 1
+  panel:
+    - what: outline
+      name: _third
+      fillet: 0.5
+
+pcbs:
+  keeb:
+    template: kicad8
+    outlines:
+      main:
+        outline: panel
+    footprints:
+      choc_hotswap:
+        what: ceoloide/switch_choc_v1_v2
+        where: true
+        params:
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+          include_corner_marks: true
+          include_keycap: true
+          keycap_height: 16.5
+          keycap_width: 17.5
+          reversible: true
+          solder: false
+          hotswap: true
+          choc_v2_support: false
+          outer_pad_width_front: 2.0
+          outer_pad_width_back: 2.0
+      diode:
+        what: ceoloide/diode_tht_sod123
+        where: true
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+          side: F
+        adjust:
+          shift: [0, -4]
+      mcu:
+        what: ceoloide/mcu_nice_nano
+        where:
+          ref: matrix_inner_top
+        params:
+          reverse_mount: false
+          reversible: true
+          only_required_jumpers: false
+        adjust:
+          shift: [25, 17]
+      reset:
+        what: ceoloide/reset_switch_smd_side
+        params:
+          from: RST
+          to: GND
+          reversible: true
+        where:
+          ref: matrix_inner_number
+          shift: [10, 15.75]
+          rotate: 0
+      rotary:
+        what: ceoloide/rotary_encoder_ec11_ec12
+        adjust:
+          ref: thumb_first_top
+          shift: [-10, 20]
+          rotate: 30
+        params:
+          reversible: true
+          S1: P1
+          S2: P10
+          A: P9
+          B: GND
+          C: P8
+      batcon:
+        what: ceoloide/battery_connector_jst_ph_2
+        where:
+          ref: matrix_inner_number
+          shift: [36, -28]
+          rotate: 180
+        params:
+          reversible: true
+          side: B
+      power:
+        what: ceoloide/power_switch_smd_side
+        params:
+          from: BAT_P
+          to: RAW
+          reversible: true
+        where:
+          ref: matrix_inner_number
+          shift: [0, 15.75]
+          rotate: 90
+
+      display:
+        what: ceoloide/display_nice_view
+        params:
+          reversible: true
+          CS: P6
+          SCK: P5
+          MOSI: P4
+        where:
+          ref: matrix_inner_top
+        # valid
+        # defaults are P1, P2, P3.
+        adjust:
+          shift: [25, 13.5]
+      
+      creator:
+        what: ceoloide/utility_text
+        params:
+          reversible: true
+          text: "made with <3 by lordbagel42"
+        where:
+          ref: matrix_index_number
+        adjust:
+          shift: [0, 10]
+
+      boardname:
+        what: ceoloide/utility_text
+        params:
+          reversible: true
+          text: "Turing Split"
+          bold: true
+          height: 1.5
+          width: 1.5
+        where:
+          ref: matrix_index_number
+        adjust:
+          shift: [0, 12.5]
