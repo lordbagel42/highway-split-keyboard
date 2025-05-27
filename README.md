@@ -1,5 +1,10 @@
 # Turing Split - HIGHWAY
 
+<img width="547" alt="pcbnew_4b81rv2bmb" src="https://github.com/user-attachments/assets/bf6a16da-f87c-4474-8741-7fb87b2e1388" />
+-# this will be replaced with a photo of the actual keyboard once its built
+
+## why?
+
 I type a lot. Like, an insane amount. I write code for my robotics team and a lot for Hack Club, so I need a decent keyboard.
 I've been using the Apple Magic Keyboard for a long while, and it's honestly quite nice. I originally bought it because my Quest 2 can track it.
 
@@ -8,7 +13,7 @@ This led me to a discovery: Keyboards, are not cheap.
 
 Then I discovered Highway and had a thought: make someone else pay for my keyboard.
 
-### my keyboard design
+## my keyboard design
 
 <img width="444" alt="chrome_bvSrW7kMNl" src="https://github.com/user-attachments/assets/5b22f7db-25ba-4874-b181-313cd5682bb8" />
 
