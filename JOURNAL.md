@@ -31,3 +31,22 @@ So turns out I accidentally did something wrong and direct-wired my ground pin. 
 
 Fixing that, then have to work on the pcb.
 time: 6:46 AM
+
+# May 27: Finished!
+time: 5:24 AM
+
+I kinda had a migraine since my last journal entry, so I had to take a break for a while.
+
+Today I spent most of my time routing the PCB. I redid my "schematic" in Excalidraw and came up with this:
+
+<img width="792" alt="chrome_Vf7Z5aU1aC" src="https://github.com/user-attachments/assets/41ea73ff-2460-4639-8895-b2ae57777484" />
+
+Still doesn't make any sense, but I could at least follow it enough to make the PCB itself. And redo the configuration files.
+
+Overall, I'm pretty proud of how the PCB came out. It's fully reversible and while I did mess up and have to re-route the entire thing, it came out well.
+
+<img width="545" alt="pcbnew_pczQXgfVvx" src="https://github.com/user-attachments/assets/28a9ec3e-14f3-4f7c-8e34-e93d3b8f2381" />
+
+I also coated it in silkscreen art, that was fun.
+
+Thanks for reading
